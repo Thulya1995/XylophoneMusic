@@ -18,9 +18,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func keyPressed(_ sender: UIButton) {
-        if sender.tag == 1{
+        /*if sender.tag == 1{
             playSound(Name: "C")
-            print(sender.currentTitle)
         }else if sender.tag == 2{
             playSound(Name: "D")
         }else if sender.tag == 3{
@@ -33,9 +32,16 @@ class ViewController: UIViewController {
             playSound(Name: "A")
         }else if sender.tag == 7{
             playSound(Name: "B")
+        }*/
+        
+        playSound(Name: sender.currentTitle!)
+        sender.alpha = 0.5
+        
+        //Code should execute after 0.2 seconds
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
+        sender.alpha = 1.0
+        
         }
-        
-        
         
     }
 
